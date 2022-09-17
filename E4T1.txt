@@ -1,0 +1,9 @@
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+1- Remove the all traffic from 0.0.0.0/0 on all ports and the SSH   from the WebAppSG 
+2- Restrict the Network ACL for the vpc to only allow the public facing port 80
+3- Disable password login on the application server
+
+# Neither instance should have had access to the secret recipes bucket, in the event that instance API credentials were compromised how could we have prevented access to sensitive data.
+ 1-Use least privilege access for the existing instance role profile to only allow access to specific buckets rather than using a wildcard selector (the free bucket in this case)
+2- Enable Server-Side encryption
+3- Use S3 policy to only allow access to this bucket from a trusted IAM role belonging to the bussiness user

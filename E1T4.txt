@@ -1,0 +1,10 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+The VPC allows all traffic and allow all ports (including the private cloud)
+
+# Poor practice 2
+the SG for WebApp allows all traffic and if we remove this rule there is another that accept SSH connection on port 22.
+
+# Poor practice 3
+The pc-flow-logs bucket doesn't have any encryption built in and it allows public access to our logs.

@@ -1,0 +1,16 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+After 15 minutes of the attack the 2 instances were Stopped by AWS.
+
+AWS GuardDuty had 2 findings:
+That one of my instances was being used to perform an SSH brute force attack (High risk)
+That one of my instances was being attacked by an SSH brute force attack (Low risk)
+AWS risk:
+This finding's severity is Low if a brute force attack is aimed at one of your EC2 instances. This finding's severity is High if your EC2 instance is being used to perform the brute force attack.
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+Amazon GuardDuty parses and processes data from AWS CloudTrail event logs, VPC flow logs, and DNS logs.
+Details of this attack can be found in VPC flow logs written to S3.
+The logs show a large number of requests from the same instance to a specific IP address, indicating that the instance is being used in an SSH brute force attack.
+The logs also show a high number of requests from one IP to another instance, indicating that the instance is being used for an SSH brute force attack.
+

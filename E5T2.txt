@@ -1,0 +1,30 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+
+CheckOv - Checkov is a static code analysis tool for scanning infrastructure as code (IaC) files for misconfigurations that may lead to security or compliance problems.
+
+### Example vulnerability
+
+CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+        FAILED for resource: AWS::EC2::SecurityGroup.WebAppSG
+
+##Scan AMI’s or containers for OS vulnerabilities
+
+Clair - open-source project which offers static security and vulnerability scanning for docker and application (appc) containers.
+
+### Example vulnerability
+
+potential threat in the container based on the Common Vulnerabilities and Exposures database (CVE) and similar databases
+
+example:
+
+CVE-2021-44228 -Log4j2
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+AWS Config - A service that enables you to assess, audit, and evaluate the configurations of your AWS resources.
+
+### Example vulnerability
+
+s3-bucket-server-side-encryption-enabled - Checks that your Amazon S3 bucket either has S3 default encryption enabled or that the S3 bucket policy explicitly denies put-object requests without server side encryption.

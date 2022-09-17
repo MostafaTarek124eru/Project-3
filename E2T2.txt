@@ -1,0 +1,27 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+AttackInstanceSG:
+Allowing ingress from 0.0.0.0/0 to port 22.
+
+WebAppSG:
+Allowing ingress from 0.0.0.0/0 to port 22
+Allowing ingress from 0.0.0.0/0 to all ports
+
+
+VPC ACL:
+Allowing all traffic.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+AttackInstanceSG:
+Modify the inbound rule for the security group to allow ingress from trusted IPs (in this case my IP) or delete the rule allowing ingress on port 22.
+
+WebAppSG:
+Modify the inbound rule for the security group to allow ingress from trusted IPs (in this case my IP) or delete the rule allowing ingress on port 22.
+
+VPC:
+Delete all inbound and outbound rules from the Network ACL.
+
+Encrypt S3 bucket for vpc_flow.
+
+
+
